@@ -1,4 +1,4 @@
-const DashFooter = () => {
+const Footer = () => {
   const content = (
     <footer className="dash-footer">
       <div className="copyright-container">
@@ -11,4 +11,4 @@ const DashFooter = () => {
 
   return content;
 };
-export default DashFooter;
+export default Footer;

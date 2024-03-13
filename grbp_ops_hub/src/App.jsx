@@ -7,8 +7,18 @@ import Welcome from './features/home/Welcome';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}></Route>
-      <Route element={<Home />} />
+      <Route path="/" element={<Layout />}>
+        <Route
+          index
+          element={
+            <>
+              <Welcome />
+              <Home />
+            </>
+          }
+        />
+      </Route>
+
       <Route index element={<Welcome />} />
 
       {/*} <Route path="garage">

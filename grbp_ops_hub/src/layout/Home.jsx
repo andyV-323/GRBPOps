@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 
-const DashLayout = () => {
+const Home = () => {
   return (
     <>
       <Header />
@@ -13,4 +13,4 @@ const DashLayout = () => {
     </>
   );
 };
-export default DashLayout;
+export default Home;
