@@ -1,0 +1,1101 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.cdnfonts.com/css/square-sans-serif-7');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* || VARIABLES */
+
+:root {
+  /* COLORS */
+  --BGCOLOR: darkcyan;
+  --BORDER-COLOR: cyan;
+  --COLOR: #fff;
+  --ERROR: firebrick;
+  --INACTIVE: rgb(54, 45, 45);
+  --LINK-COLOR: cyan;
+  --LINK-HOVER: rgba(245, 245, 245, 0.9);
+  --NOTE-BGCOLOR: hsla(240, 82%, 45%, 0.65);
+  --STATUS-ACTIVE: limegreen;
+  --STATUS-OPEN: firebrick;
+  --TABLE-BGCOLOR: transparent;
+  --TABLE-COLOR: rgb(89, 89, 89);
+  --TABLE-FONT-COLOR: white;
+  --TABLE-COLUMN: #1e272e;
+  --INPUT-INVALID: rgb(79, 45, 45);
+}
+
+/* || UTILITY CLASSES */
+.errmsg {
+  display: inline-block;
+  background-color: var(--TABLE-BGCOLOR);
+  color: var(--ERROR);
+  padding: 0.25em;
+  margin-bottom: 0.5em;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.icon-button {
+  width: 48px;
+  height: 48px;
+  font-size: 2.5rem;
+  background-color: transparent;
+  border: none;
+  color: cyan;
+  display: grid;
+  place-content: center;
+}
+
+.icon-button:hover,
+.icon-button:focus-visible {
+  transform: scale(1.2);
+  color: white;
+}
+
+.icon-button[disabled] {
+  visibility: hidden;
+}
+
+/* || GENERAL STYLES */
+
+body {
+  font-family: 'Square Sans Serif 7', sans-serif;
+  min-height: 100vh;
+  color: var(--COLOR);
+  background-image: url('/img/BG.png');
+  background-color: #3c3c3c;
+  background-size: 100% 100%;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Rest of your styles... */
+
+/* Rest of your styles... */
+[type='text'],
+[type='number'],
+input,
+textarea,
+select {
+  font: inherit;
+  background-color: black;
+  color: cyan;
+}
+
+button {
+  color: black;
+}
+.play-button {
+  color: black;
+}
+#root {
+  /* React root div */
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+a:visited {
+  color: var(--LINK-COLOR);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--LINK-HOVER);
+}
+
+/* || PAGES */
+
+/*.public,
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-right: 68rem;
+  padding-left: 0rem;
+}
+
+.public {
+  padding: 1em;
+  flex-grow: 1;
+}*/
+
+.public__main,
+.login {
+  flex-grow: 1;
+  border-top: 2px solid var(--BORDER-COLOR);
+  border-bottom: 2px solid var(--BORDER-COLOR);
+  padding: 1em 0;
+}
+
+.public__addr {
+  margin-top: 1em;
+}
+
+/* || DASH HEADER, CONTAINER & FOOTER */
+
+.dash-header {
+  position: sticky;
+  top: 25px;
+  z-index: 10;
+  background-color: transparent;
+  padding: 0 0.5em;
+}
+
+.dash-header__container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dash-header__container--small {
+  max-width: 800px;
+}
+
+.dash-header__nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  gap: 0.5em;
+}
+
+/* CSS */
+.header-button {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1a1a1a;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3b3b3b;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+
+.header-button:disabled {
+  pointer-events: none;
+}
+
+.header-button:hover {
+  color: #fff;
+  background-color: #1a1a1a;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.header-button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+.header-backButton {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1a1a1a;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #3b3b3b;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roobert, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+
+.header-backButton:disabled {
+  pointer-events: none;
+}
+
+.header-backButton:hover {
+  color: #fff;
+  background-color: #1a1a1a;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.header-backButton:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.dash-container {
+  flex-grow: 1;
+}
+
+.dash-footer {
+  font-size: 1rem;
+  position: sticky;
+
+  z-index: 1;
+  background-color: transparent;
+  padding: 1.5em;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  gap: 1em;
+}
+
+.dash-footer__button {
+  font-size: 3rem;
+  width: auto;
+  height: auto;
+  color: cyan;
+}
+
+/* || TABLES - GENERAL */
+
+thead,
+tbody,
+tr {
+  display: contents;
+}
+
+.table {
+  font-size: 1px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.1fr 1fr 1fr 0.5fr;
+  color: var(--TABLE-FONT-COLOR);
+  gap: 0.1em;
+  background-color: #ffffff1a;
+}
+.table-container {
+  display: flex;
+  justify-content: center;
+  height: 600px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.table-container::-webkit-scrollbar {
+  display: none;
+}
+.table-scroll {
+  max-height: 750px; /* Set the maximum height you want */
+
+  max-width: 1500px;
+}
+.table__button {
+  padding: 0.25em;
+  font-size: 1.5rem;
+  color: white;
+}
+.operator-list-container {
+  display: flex;
+  justify-content: center;
+}
+.table__thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.table__th {
+  background-color: var(--BGCOLOR);
+  text-align: left;
+  color: #fff;
+  border: 1px solid var(--TABLE-COLOR);
+  padding: 0.5em;
+}
+.table__cell {
+  background-color: var(--TABLE-BGCOLOR);
+  text-align: center;
+  border: 1px solid var(--TABLE-COLOR);
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.table__cell:last-child {
+  display: grid;
+  place-content: center;
+}
+
+.table__cell--inactive {
+  background-color: var(--INACTIVE);
+}
+
+/* Make the first row sticky */
+.table thead tr:first-child th {
+  position: sticky;
+  top: 0;
+  background-color: var(--BGCOLOR);
+  z-index: 1;
+  text-align: left;
+  color: #fff;
+  border: 1px solid var(--TABLE-COLOR);
+  padding: 0.5em;
+  font-size: 20px;
+}
+
+/* || FORM - GENERAL */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
+  align-items: center;
+  color: cyan;
+}
+
+.form__checkbox-container {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 0.5em;
+}
+
+.form__persist {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 0.5em;
+}
+
+.form__title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form__input,
+.form__submit-button {
+  padding: 0.5em;
+  border-radius: 15px;
+}
+
+.form__input--text {
+  min-height: 150px;
+}
+
+.form__input--incomplete {
+  border: 1px solid var(--INPUT-INVALID);
+  outline: 1px solid var(--INPUT-INVALID);
+}
+
+.form__checkbox {
+  width: 24px;
+  height: 24px;
+}
+
+.form__select {
+  width: fit-content;
+  padding: 0.25em;
+}
+
+.form__action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5em;
+  position: absolute;
+  right: 0.5em;
+}
+
+.form__row {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 2em;
+}
+
+.form__divider {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5em;
+}
+
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .dash-header__nav {
+    gap: 0;
+  }
+
+  .icon-button {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.25rem;
+  }
+
+  .dash-header {
+    padding: 0 15em;
+  }
+
+  .dash-container {
+    padding: 1em;
+  }
+
+  .table {
+    font-size: 1.5rem;
+  }
+
+  .table--notes {
+    grid-template-columns: repeat(3, 1fr) 2fr repeat(2, 1fr);
+  }
+
+  .note__created,
+  .note__updated,
+  .note__username {
+    display: block;
+  }
+
+  .form__action-buttons {
+    position: static;
+  }
+  /* Add these classes to your CSS file */
+  .injury-f2f {
+    color: darkcyan;
+  }
+
+  .injury-kia {
+    color: darkred;
+  }
+  /* CSS for class images */
+  .class-image {
+    width: 30px; /* Set the width of the image */
+    height: 30px; /* Set the height of the image */
+    margin-right: 10px; /* Adjust the margin as needed */
+    vertical-align: middle; /* Align the image vertically with the text */
+  }
+  .condition-kia {
+    color: #ab1c38;
+  }
+  .condition-f2f {
+    color: darkcyan;
+  }
+  .condition-wia {
+    color: darkgoldenrod;
+  }
+  /* Add this to your CSS file */
+
+  .dropdown-container {
+    position: relative;
+    display: inline-block;
+    z-index: 3;
+  }
+
+  .dropdown-button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .dropdown-menu div:hover {
+    background-color: darkcyan;
+    cursor: pointer;
+  }
+  button.sort {
+    background-color: cyan;
+    color: darkcyan;
+  }
+
+  button.sort:hover {
+    background-color: darkcyan; /* Change the background color on hover */
+    color: cyan;
+  }
+  /* Add styles for selected items */
+  .selected {
+    background-color: #007bff;
+    color: #bf1e1e;
+  }
+  .copyright-container {
+    text-align: center; /* Center the text horizontally */
+    width: 100%;
+  }
+  /* Add these styles to your existing stylesheet */
+
+  /* Add these styles to your existing stylesheet */
+
+  /* Add these styles to your existing stylesheet */
+
+  /* Add these styles to your existing stylesheet */
+
+  .team_table {
+    font-size: 16px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: var(--TABLE-FONT-COLOR);
+  }
+  .team_table-container {
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .team_table-scroll {
+    max-height: 750px; /* Set the maximum height you want */
+
+    max-width: 1500px;
+  }
+  .team_table-container::-webkit-scrollbar {
+    display: none;
+  }
+  .team_table__button {
+    padding: 0.25em;
+    font-size: 1.5rem;
+    color: white;
+  }
+  .team_table__thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .team_table__th {
+    background-color: var(--BGCOLOR);
+    text-align: left;
+    color: #fff;
+    border: 1px solid var(--TABLE-COLOR);
+    padding: 0.5em;
+  }
+  .team_table-cell {
+    background-color: #ffffff1a;
+    text-align: center;
+    border: 1px solid var(--TABLE-COLOR);
+    padding: 0.5em;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    font-size: 12px;
+  }
+  .team_table-cell:last-child {
+    display: grid;
+    place-content: center;
+  }
+  .team_table thead tr:first-child th {
+    position: sticky;
+    top: 0;
+    background-color: var(--BGCOLOR);
+    z-index: 1;
+    text-align: left;
+    color: #fff;
+    border: 1px solid var(--TABLE-COLOR);
+    padding: 0.5em;
+    font-size: 20px;
+  }
+
+  .icon-button.team_table__button {
+    padding: 0.25em;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .timerPage {
+    display: flex;
+    font-size: 1rem;
+    color: cyan;
+  }
+  .timerPage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .custom_timer {
+    color: cyan;
+  }
+  .timer_button {
+    color: cyan;
+    background-color: darkcyan;
+  }
+  .timer_button:hover {
+    color: darkcyan;
+    background-color: cyan;
+  }
+  .timers {
+    color: cyan;
+  }
+  .generator-map {
+    display: flex;
+    gap: 0px;
+    overflow-x: auto;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .leaflet-top,
+  .leaflet-bottom {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none;
+    font-size: large;
+  }
+  .custom-popup .leaflet-popup-content-wrapper {
+    background-color: rgba(0, 255, 255, 0.5); /* Change background color */
+    color: black; /* Change text color */
+    border-radius: 8px; /* Optional: rounded corners */
+    padding: 10px; /* Optional: padding inside the popup */
+  }
+
+  .custom-popup .leaflet-popup-content {
+    font-size: 14px; /* Adjust text size */
+    /* Additional text styling if needed */
+  }
+  .custom-popup .leaflet-popup-tip-container {
+    display: inline;
+  }
+  .custom-popup .leaflet-popup-tip-container .leaflet-popup-tip {
+    border-top-color: black; /* Color of the tip arrow */
+  }
+  .hackbtn {
+    background-color: cyan;
+    /* Add other styling as needed */
+  }
+
+  .hackedbtn {
+    /* Add common styling for the button */
+  }
+
+  .hackedbtn.red {
+    background-color: red;
+  }
+
+  .hackedbtn.green {
+    background-color: green;
+  }
+
+  .foundbtn {
+    background-color: cyan;
+    color: black;
+    /* Add other styling as needed */
+  }
+  .loadout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  dd {
+    font-size: 15px;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield; /* Firefox */
+  }
+  .items-center {
+    display: inline-flex;
+  }
+  .generate {
+    background: black;
+    color: darkcyan;
+  }
+  .generate:hover {
+    background-color: cyan;
+    color: darkcyan;
+  }
+  .chatgpt {
+    background: black;
+    color: darkcyan;
+  }
+  .chatgpt:hover {
+    background-color: cyan;
+    color: darkcyan;
+  }
+  .mission-equipment {
+    display: flex;
+    gap: 0px;
+    overflow-x: auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  .control-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+  .vehicle_table {
+    font-size: 16px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: var(--TABLE-FONT-COLOR);
+  }
+  .vehicle_table-container {
+    display: flex;
+    justify-content: center;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .vehicle_table-scroll {
+    max-height: 750px; /* Set the maximum height you want */
+
+    max-width: 1500px;
+  }
+  .vehicle_table-container::-webkit-scrollbar {
+    display: none;
+  }
+  .vehicle_table__button {
+    padding: 0.25em;
+    font-size: 1.5rem;
+    color: white;
+  }
+  .vehicle_table__thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  .vehicle_table__th {
+    background-color: var(--BGCOLOR);
+    text-align: left;
+    color: #fff;
+    border: 1px solid var(--TABLE-COLOR);
+    padding: 0.5em;
+  }
+  .vehicle_table-cell {
+    background-color: #ffffff1a;
+    text-align: center;
+    border: 1px solid var(--TABLE-COLOR);
+    padding: 0.5em;
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    font-size: 12px;
+  }
+  .vehicle_table-cell:last-child {
+    display: grid;
+    place-content: center;
+  }
+  .vehicle_table thead tr:first-child th {
+    position: sticky;
+    top: 0;
+    background-color: var(--BGCOLOR);
+    z-index: 1;
+    text-align: left;
+    color: #fff;
+    border: 1px solid var(--TABLE-COLOR);
+    padding: 0.5em;
+    font-size: 20px;
+  }
+
+  .icon-button.vehicle_table__button {
+    padding: 0.25em;
+    font-size: 1.5rem;
+    color: white;
+  }
+  .fuel-calculator {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .vehicle-select {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .fuel-gauge {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .fuel-indicator {
+    padding: 0 5px;
+  }
+
+  .fuel-bar {
+    background-color: #ddd;
+    flex-grow: 1;
+    margin: 0 10px;
+    height: 20px;
+    position: relative; /* Ensure position context for children */
+    border-radius: 5px;
+    overflow: hidden; /* Ensures that children don't overflow */
+  }
+
+  .fuel-level {
+    background-color: green;
+    height: 100%;
+    border-radius: 5px; /* Match parent's border-radius */
+    transition: width 0.5s ease;
+  }
+
+  .fuel-bar::before {
+    content: '| | | | | |';
+    position: absolute;
+
+    left: 0;
+    right: 0; /* Ensure full width */
+    text-align: center;
+    color: #333;
+  }
+  .label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .label #indicator-check {
+    display: none;
+  }
+  .label #indicator-check:checked + div {
+    margin-left: 100px;
+  }
+  .label:hover .toggle-container {
+    box-shadow: 0px 0px 15px -3px rgba(200, 200, 200, 0.6),
+      inset 0px 0px 18px 5px rgba(0, 0, 0, 0.75);
+  }
+  /*box*/
+  /*.toggle-container {
+    width: 260px;
+    height: 120px;
+    box-shadow: 0px 0px 27px -3px rgba(0, 0, 0, 0.75),
+      inset 0px 0px 18px 5px rgba(0, 0, 0, 0.75);
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }*/
+  /*color inside box*/
+  /*.toggle-container-inner {
+    box-shadow: inset 0px 0px 70px 15px rgba(0, 0, 0, 0.5);
+    background-color: #101010;
+    width: 240px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }*/
+  .toggle-container-inner-ticks {
+    box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.75),
+      inset 0px 25px 26px -26px rgba(236, 236, 236, 0.5);
+    background-color: #080808;
+    display: flex;
+    padding: 10px 30px;
+    position: relative;
+  }
+  .toggle-container-inner-ticks-cover {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  .toggle-container-inner-ticks-container {
+    display: flex;
+  }
+  .toggle-container-inner-ticks-container .tick {
+    color: white;
+    width: 10px;
+  }
+  .toggle-container-inner-ticks-container .tick::after {
+    content: ' ';
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    width: 2px;
+    height: 10px;
+    background: #8b8b8b;
+    position: absoulute;
+  }
+  .toggle-container-inner-ticks-container .tick.big {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .toggle-container-inner-ticks-container .tick.big::after {
+    height: 15px;
+    margin-top: 10px;
+  }
+  .toggle-container-inner-ticks-container .tick.big small {
+    font-size: 8px;
+    font-weight: normal;
+  }
+  .toggle-container-inner-ticks-container .tick.e {
+    color: #cb3a3a;
+  }
+  .toggle-container-inner-ticks-container .tick.f {
+    color: #03c703;
+  }
+  .toggle-container-inner-ticks-indicator {
+    width: 10px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    margin-left: 0px;
+    transition: 1.8s ease;
+    background-color: rgba(250, 22, 22, 0.3);
+  }
+  .show-map {
+    color: white;
+  }
+  .close-btn {
+    color: white;
+  }
+  .simulator {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* align-content: center; */
+    align-items: center;
+    justify-content: center;
+    font-size: 15;
+  }
+  .inc-dec-btn {
+    display: flex;
+    flex-direction: column;
+  }
+  .quantity-input {
+    justify-content: center;
+    font-size: 4px;
+  }
+  .create-operation {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .text-createOP {
+    width: 500px;
+    height: 500px;
+    font-size: medium;
+  }
+  .import-operation {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .community-menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .missioncontrol {
+    height: 900px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 50px;
+  }
+}
