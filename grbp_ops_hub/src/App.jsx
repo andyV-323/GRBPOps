@@ -4,6 +4,7 @@ import Layout from './layout/Layout';
 import Home from './layout/Home';
 import Welcome from './features/home/Welcome';
 import MissionControl from './features/missions/MissionControl';
+import VehicleSim from './features/garage/VehicleSim';
 
 function App() {
   return (
@@ -24,10 +25,11 @@ function App() {
       <Route path="missions">
         <Route index element={<MissionControl />} />
       </Route>
-
-      {/*} <Route path="garage">
-        <Route index element={<FuelSim />} />
+      <Route path="garage">
+        <Route index element={<VehicleSim />} />
       </Route>
+
+      {/*}
       <Route path="dashboard">
         <Route index element={<Dashboard />} />
       </Route>
