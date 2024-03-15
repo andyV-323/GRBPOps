@@ -5,6 +5,7 @@ import Home from './layout/Home';
 import Welcome from './features/home/Welcome';
 import MissionControl from './features/missions/MissionControl';
 import VehicleSim from './features/garage/VehicleSim';
+import Armory from './features/armory/Armory';
 
 function App() {
   return (
@@ -28,15 +29,16 @@ function App() {
       <Route path="garage">
         <Route index element={<VehicleSim />} />
       </Route>
+      <Route path="armory">
+        <Route index element={<Armory />} />
+      </Route>
 
       {/*}
       <Route path="dashboard">
         <Route index element={<Dashboard />} />
       </Route>
       
-      <Route path="armory">
-        <Route index element={<EquipmentDash />} />
-      </Route>
+      
       <Route path="community">
         <Route index element={<CommunityOP />} />
       </Route>

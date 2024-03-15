@@ -17,17 +17,6 @@
 }
 
 /* || UTILITY CLASSES */
-.errmsg {
-  display: inline-block;
-  background-color: var(--TABLE-BGCOLOR);
-  color: var(--ERROR);
-  padding: 0.25em;
-  margin-bottom: 0.5em;
-}
-
-.nowrap {
-  white-space: nowrap;
-}
 
 .icon-button {
   width: 48px;
@@ -35,7 +24,7 @@
   font-size: 2.5rem;
   background-color: transparent;
   border: none;
-  color: cyan;
+  color: var(--LINK-COLOR);
   display: grid;
   place-content: center;
 }
@@ -43,7 +32,7 @@
 .icon-button:hover,
 .icon-button:focus-visible {
   transform: scale(1.2);
-  color: white;
+  color: var(--LINK-HOVER);
 }
 
 .icon-button[disabled] {
@@ -63,9 +52,6 @@ body {
   background-attachment: fixed;
 }
 
-/* Rest of your styles... */
-
-/* Rest of your styles... */
 [type='text'],
 [type='number'],
 input,
@@ -262,98 +248,6 @@ a:focus-visible {
   color: cyan;
 }
 
-/* || TABLES - GENERAL */
-
-thead,
-tbody,
-tr {
-  display: contents;
-}
-
-.table {
-  font-size: 1px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 0.1fr 1fr 1fr 0.5fr;
-  color: var(--TABLE-FONT-COLOR);
-  gap: 0.1em;
-  background-color: #ffffff1a;
-}
-.table-container {
-  display: flex;
-  justify-content: center;
-  height: 600px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  padding-left: 100px;
-  padding-right: 100px;
-}
-.table-container::-webkit-scrollbar {
-  display: none;
-}
-.table-scroll {
-  max-height: 750px; /* Set the maximum height you want */
-
-  max-width: 1500px;
-}
-.table__button {
-  padding: 0.25em;
-  font-size: 1.5rem;
-  color: white;
-}
-.operator-list-container {
-  display: flex;
-  justify-content: center;
-}
-.table__thead {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-.table__th {
-  background-color: var(--BGCOLOR);
-  text-align: left;
-  color: #fff;
-  border: 1px solid var(--TABLE-COLOR);
-  padding: 0.5em;
-}
-.table__cell {
-  background-color: var(--TABLE-BGCOLOR);
-  text-align: center;
-  border: 1px solid var(--TABLE-COLOR);
-  padding: 0.5em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-}
-
-.table__cell:last-child {
-  display: grid;
-  place-content: center;
-}
-
-.table__cell--inactive {
-  background-color: var(--INACTIVE);
-}
-
-/* Make the first row sticky */
-.table thead tr:first-child th {
-  position: sticky;
-  top: 0;
-  background-color: var(--BGCOLOR);
-  z-index: 1;
-  text-align: left;
-  color: #fff;
-  border: 1px solid var(--TABLE-COLOR);
-  padding: 0.5em;
-  font-size: 20px;
-}
-
 /* || FORM - GENERAL */
 
 .form {
@@ -459,228 +353,13 @@ tr {
     padding: 1em;
   }
 
-  .table {
-    font-size: 1.5rem;
-  }
-
-  .table--notes {
-    grid-template-columns: repeat(3, 1fr) 2fr repeat(2, 1fr);
-  }
-
-  .note__created,
-  .note__updated,
-  .note__username {
-    display: block;
-  }
-
   .form__action-buttons {
     position: static;
   }
-  /* Add these classes to your CSS file */
-  .injury-f2f {
-    color: darkcyan;
-  }
 
-  .injury-kia {
-    color: darkred;
-  }
-  /* CSS for class images */
-  .class-image {
-    width: 30px; /* Set the width of the image */
-    height: 30px; /* Set the height of the image */
-    margin-right: 10px; /* Adjust the margin as needed */
-    vertical-align: middle; /* Align the image vertically with the text */
-  }
-  .condition-kia {
-    color: #ab1c38;
-  }
-  .condition-f2f {
-    color: darkcyan;
-  }
-  .condition-wia {
-    color: darkgoldenrod;
-  }
-  /* Add this to your CSS file */
-
-  .dropdown-container {
-    position: relative;
-    display: inline-block;
-    z-index: 3;
-  }
-
-  .dropdown-button {
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-
-  .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: black;
-    border: 1px solid #ccc;
-    padding: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  .dropdown-menu div:hover {
-    background-color: darkcyan;
-    cursor: pointer;
-  }
-  button.sort {
-    background-color: cyan;
-    color: darkcyan;
-  }
-
-  button.sort:hover {
-    background-color: darkcyan; /* Change the background color on hover */
-    color: cyan;
-  }
-  /* Add styles for selected items */
-  .selected {
-    background-color: #007bff;
-    color: #bf1e1e;
-  }
   .copyright-container {
-    text-align: center; /* Center the text horizontally */
-    width: 100%;
-  }
-  /* Add these styles to your existing stylesheet */
-
-  /* Add these styles to your existing stylesheet */
-
-  /* Add these styles to your existing stylesheet */
-
-  /* Add these styles to your existing stylesheet */
-
-  .team_table {
-    font-size: 16px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    color: var(--TABLE-FONT-COLOR);
-  }
-  .team_table-container {
-    display: flex;
-    justify-content: center;
-    height: 600px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-  .team_table-scroll {
-    max-height: 750px; /* Set the maximum height you want */
-
-    max-width: 1500px;
-  }
-  .team_table-container::-webkit-scrollbar {
-    display: none;
-  }
-  .team_table__button {
-    padding: 0.25em;
-    font-size: 1.5rem;
-    color: white;
-  }
-  .team_table__thead {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-  }
-
-  .team_table__th {
-    background-color: var(--BGCOLOR);
-    text-align: left;
-    color: #fff;
-    border: 1px solid var(--TABLE-COLOR);
-    padding: 0.5em;
-  }
-  .team_table-cell {
-    background-color: #ffffff1a;
     text-align: center;
-    border: 1px solid var(--TABLE-COLOR);
-    padding: 0.5em;
-    display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    font-size: 12px;
-  }
-  .team_table-cell:last-child {
-    display: grid;
-    place-content: center;
-  }
-  .team_table thead tr:first-child th {
-    position: sticky;
-    top: 0;
-    background-color: var(--BGCOLOR);
-    z-index: 1;
-    text-align: left;
-    color: #fff;
-    border: 1px solid var(--TABLE-COLOR);
-    padding: 0.5em;
-    font-size: 20px;
-  }
-
-  .icon-button.team_table__button {
-    padding: 0.25em;
-    font-size: 1.5rem;
-    color: white;
-  }
-
-  .timerPage {
-    display: flex;
-    font-size: 1rem;
-    color: cyan;
-  }
-  .timerPage-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  .custom_timer {
-    color: cyan;
-  }
-  .timer_button {
-    color: cyan;
-    background-color: darkcyan;
-  }
-  .timer_button:hover {
-    color: darkcyan;
-    background-color: cyan;
-  }
-  .timers {
-    color: cyan;
-  }
-
-  .hackbtn {
-    background-color: cyan;
-    /* Add other styling as needed */
-  }
-
-  .hackedbtn {
-    /* Add common styling for the button */
-  }
-
-  .hackedbtn.red {
-    background-color: red;
-  }
-
-  .hackedbtn.green {
-    background-color: green;
-  }
-
-  .foundbtn {
-    background-color: cyan;
-    color: black;
-    /* Add other styling as needed */
-  }
-  .loadout {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: space-evenly;
-    align-items: center;
+    width: 100%;
   }
 
   input[type='number']::-webkit-outer-spin-button,
@@ -695,104 +374,97 @@ tr {
   .items-center {
     display: inline-flex;
   }
-  .generate {
-    background: black;
-    color: darkcyan;
-  }
 
-  .mission-equipment {
+  .quantity-input {
+    justify-content: center;
+    font-size: 4px;
+  }
+  .create-operation {
     display: flex;
-    gap: 0px;
-    overflow-x: auto;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    align-items: baseline;
-  }
-
-  .control-buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: stretch;
-    justify-content: center;
     align-items: center;
-    color: black;
-  }
-  .vehicle_table {
-    font-size: 16px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    color: var(--TABLE-FONT-COLOR);
-  }
-  .vehicle_table-container {
-    display: flex;
-    justify-content: center;
+    font-size: medium;
     height: 600px;
     overflow-x: hidden;
     overflow-y: scroll;
     padding-left: 100px;
     padding-right: 100px;
   }
-  .vehicle_table-scroll {
-    max-height: 750px; /* Set the maximum height you want */
-
-    max-width: 1500px;
+  .text-createOP {
+    width: 500px;
+    height: 500px;
+    font-size: medium;
   }
-  .vehicle_table-container::-webkit-scrollbar {
-    display: none;
-  }
-  .vehicle_table__button {
-    padding: 0.25em;
-    font-size: 1.5rem;
-    color: white;
-  }
-  .vehicle_table__thead {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-  }
-
-  .vehicle_table__th {
-    background-color: var(--BGCOLOR);
-    text-align: left;
-    color: #fff;
-    border: 1px solid var(--TABLE-COLOR);
-    padding: 0.5em;
-  }
-  .vehicle_table-cell {
-    background-color: #ffffff1a;
-    text-align: center;
-    border: 1px solid var(--TABLE-COLOR);
-    padding: 0.5em;
+  .import-operation {
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    font-size: 12px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 100px;
+    padding-right: 100px;
   }
-  .vehicle_table-cell:last-child {
-    display: grid;
-    place-content: center;
-  }
-  .vehicle_table thead tr:first-child th {
-    position: sticky;
-    top: 0;
-    background-color: var(--BGCOLOR);
-    z-index: 1;
-    text-align: left;
-    color: #fff;
-    border: 1px solid var(--TABLE-COLOR);
-    padding: 0.5em;
-    font-size: 20px;
+  .community-menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
   }
 
-  .icon-button.vehicle_table__button {
-    padding: 0.25em;
-    font-size: 1.5rem;
-    color: white;
+  /* || MAP, SPEECH, MISSION GEN*/
+  .missioncontrol {
+    height: 1080px;
+    overflow-x: hidden;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
+  .generator-map {
+    display: flex;
+    gap: 0px;
+    overflow-x: auto;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .leaflet-top,
+  .leaflet-bottom {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none;
+    font-size: large;
+  }
+  .custom-popup .leaflet-popup-content-wrapper {
+    background-color: rgba(0, 255, 255, 0.5);
+    color: black;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .custom-popup .leaflet-popup-content {
+    font-size: 14px;
+  }
+  .custom-popup .leaflet-popup-tip-container {
+    display: inline;
+  }
+  .custom-popup .leaflet-popup-tip-container .leaflet-popup-tip {
+    border-top-color: black;
+  }
+  /* || GARAGE */
   .fuel-calculator {
     display: flex;
     flex-direction: column;
@@ -830,15 +502,15 @@ tr {
     flex-grow: 1;
     margin: 0 10px;
     height: 20px;
-    position: relative; /* Ensure position context for children */
+    position: relative;
     border-radius: 5px;
-    overflow: hidden; /* Ensures that children don't overflow */
+    overflow: hidden;
   }
 
   .fuel-level {
     background-color: green;
     height: 100%;
-    border-radius: 5px; /* Match parent's border-radius */
+    border-radius: 5px;
     transition: width 0.5s ease;
   }
 
@@ -847,7 +519,7 @@ tr {
     position: absolute;
 
     left: 0;
-    right: 0; /* Ensure full width */
+    right: 0;
     text-align: center;
     color: #333;
   }
@@ -932,17 +604,10 @@ tr {
     transition: 1.8s ease;
     background-color: rgba(250, 22, 22, 0.3);
   }
-  .show-map {
-    color: white;
-  }
-  .close-btn {
-    color: white;
-  }
   .simulator {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    /* align-content: center; */
     align-items: center;
     justify-content: center;
     font-size: 15;
@@ -951,92 +616,32 @@ tr {
     display: flex;
     flex-direction: column;
   }
-  .quantity-input {
-    justify-content: center;
-    font-size: 4px;
-  }
-  .create-operation {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    font-size: medium;
-    height: 600px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-  .text-createOP {
-    width: 500px;
-    height: 500px;
-    font-size: medium;
-  }
-  .import-operation {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    font-size: medium;
-    height: 600px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    padding-left: 100px;
-    padding-right: 100px;
-  }
-  .community-menu {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-  }
-  /* || MAP, SPEECH, MISSION GEN*/
-  .missioncontrol {
-    height: 1080px;
-    overflow-x: hidden;
+
+  /* || ARMORY*/
+  .armory-container {
+    height: 1000px;
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 100px;
-    padding-bottom: 100px;
   }
-  .generator-map {
+  .loadout {
     display: flex;
-    gap: 0px;
-    overflow-x: auto;
-    flex-direction: column;
-    align-content: center;
+    flex-direction: row;
     flex-wrap: wrap;
+    align-content: center;
     justify-content: center;
-    align-items: center;
   }
-
-  .leaflet-top,
-  .leaflet-bottom {
-    position: absolute;
-    z-index: 1000;
-    pointer-events: none;
-    font-size: large;
+  .loadout-selection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: stretch;
   }
-  .custom-popup .leaflet-popup-content-wrapper {
-    background-color: rgba(0, 255, 255, 0.5);
-    color: black;
-    border-radius: 8px;
-    padding: 10px;
-  }
-
-  .custom-popup .leaflet-popup-content {
-    font-size: 14px;
-  }
-  .custom-popup .leaflet-popup-tip-container {
-    display: inline;
-  }
-  .custom-popup .leaflet-popup-tip-container .leaflet-popup-tip {
-    border-top-color: black;
+  .reset-btn-container {
+    margin: 0 auto;
+    width: 50%;
+    padding-top: 20px;
   }
 }
