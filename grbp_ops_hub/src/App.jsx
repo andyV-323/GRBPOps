@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './layout/Layout';
 import Home from './layout/Home';
 import Welcome from './features/home/Welcome';
+import MissionControl from './features/missions/MissionControl';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
       </Route>
 
       <Route index element={<Welcome />} />
+      <Route path="missions">
+        <Route index element={<MissionControl />} />
+      </Route>
 
       {/*} <Route path="garage">
         <Route index element={<FuelSim />} />
@@ -27,9 +31,7 @@ function App() {
       <Route path="dashboard">
         <Route index element={<Dashboard />} />
       </Route>
-      <Route path="missions">
-        <Route index element={<MissionControl />} />
-      </Route>
+      
       <Route path="armory">
         <Route index element={<EquipmentDash />} />
       </Route>
