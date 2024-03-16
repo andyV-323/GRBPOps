@@ -1,6 +1,6 @@
 import { useEquipment } from './EquipmentContext';
 
-export const SpecialItemsSelector = ({ item, weight }) => {
+export const SpecialItemsSelector = ({ item }) => {
   const { equipment, updateQuantity } = useEquipment();
 
   const handleIncrement = () => {
@@ -26,7 +26,6 @@ export const SpecialItemsSelector = ({ item, weight }) => {
           onClick={handleDecrement}
           className="bg-gray-100  hover:bg-cyan-200 border border-gray-300 rounded-l-lg p-3 h-11 focus:ring-gray-100  focus:ring-2 focus:outline-none"
         >
-          {/* Decrement Icon */}
           <svg
             className="w-3 h-3 text-gray-900 "
             aria-hidden="true"
@@ -56,7 +55,6 @@ export const SpecialItemsSelector = ({ item, weight }) => {
           onClick={handleIncrement}
           className="bg-gray-100  hover:bg-cyan-200 border border-gray-300 rounded-r-lg p-3 h-11 focus:ring-gray-100  focus:ring-2 focus:outline-none"
         >
-          {/* Increment Icon */}
           <svg
             className="w-3 h-3 text-gray-900 "
             aria-hidden="true"
