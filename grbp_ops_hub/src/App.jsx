@@ -9,6 +9,7 @@ import Armory from './features/armory/Armory';
 import CommunityOPS from './features/community/CommunityOPS';
 import CreateOPS from './features/community/CreateOPS';
 import ImportOPS from './features/community/ImportOPS';
+import Dashboard from './features/dashboard/Dashboard';
 
 function App() {
   return (
@@ -44,15 +45,9 @@ function App() {
       <Route path="community/import">
         <Route index element={<ImportOPS />} />
       </Route>
-
-      {/*}
       <Route path="dashboard">
         <Route index element={<Dashboard />} />
       </Route>
-      
-      
-     
-  </Route>*/}
     </Routes>
   );
 }

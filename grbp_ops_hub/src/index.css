@@ -644,4 +644,21 @@ a:focus-visible {
     width: 50%;
     padding-top: 20px;
   }
+  /* || DASHBOARD*/
+  .dashboard {
+    height: 800px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow-y: scroll;
+  }
+  .mission-speech {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    align-items: center;
+  }
 }
