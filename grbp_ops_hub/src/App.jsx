@@ -6,6 +6,9 @@ import Welcome from './features/home/Welcome';
 import MissionControl from './features/missions/MissionControl';
 import VehicleSim from './features/garage/VehicleSim';
 import Armory from './features/armory/Armory';
+import CommunityOPS from './features/community/CommunityOPS';
+import CreateOPS from './features/community/CreateOPS';
+import ImportOPS from './features/community/ImportOPS';
 
 function App() {
   return (
@@ -32,6 +35,15 @@ function App() {
       <Route path="armory">
         <Route index element={<Armory />} />
       </Route>
+      <Route path="community">
+        <Route index element={<CommunityOPS />} />
+      </Route>
+      <Route path="community/create">
+        <Route index element={<CreateOPS />} />
+      </Route>
+      <Route path="community/import">
+        <Route index element={<ImportOPS />} />
+      </Route>
 
       {/*}
       <Route path="dashboard">
@@ -39,14 +51,7 @@ function App() {
       </Route>
       
       
-      <Route path="community">
-        <Route index element={<CommunityOP />} />
-      </Route>
-      <Route path="community/create">
-        <Route index element={<CreateOP />} />
-      </Route>
-      <Route path="community/import">
-        <Route index element={<UploadOP />} />
+     
   </Route>*/}
     </Routes>
   );

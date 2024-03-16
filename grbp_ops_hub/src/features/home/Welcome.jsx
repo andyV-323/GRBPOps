@@ -57,7 +57,7 @@ const Welcome = () => {
           {' '}
           <li className="menu-list__item">Garage</li>
         </Link>
-        <Link to="/dash/community">
+        <Link to="/community">
           {' '}
           <li className="menu-list__item">Community Operations</li>
         </Link>
