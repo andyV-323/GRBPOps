@@ -33,41 +33,45 @@ const MissionControl = () => {
 
   return (
     <div className="dashboard">
-      <div className="top">
-        <div className="mission-speech">
-          <MissionGenerator onGenerateOps={handleGenerateOps} />
-          <SpeechSynthesis />
-        </div>
-        <div className="armory-dash">
-          <Armory />
-        </div>
-      </div>
-
-      <div className="map-dash">
-        {mapWasClosed && !showMap && (
-          <button
-            className="bg-gray-100   hover:bg-cyan-200 border border-gray-300 rounded-lg p-3 h-11 focus:ring-gray-100  focus:ring-2 focus:outline-none"
-            onClick={handleShowMap}
-          >
-            Show Map
-          </button>
-        )}
-        {showMap && (
-          <NonGeographicalMap
-            onClose={handleCloseMap}
-            bounds={mapBounds}
-            selectedProvince={selectedProvince}
-            locationsInProvince={randomSelection}
-            imgURL={imgURL}
-          />
-        )}
-      </div>
-      <div className="vehicle-dash">
-        <VehicleSim />
-      </div>
-      <div className="armory-dash">
-        <Armory />
-      </div>
+      <section>
+        <section className="mission-speech">
+          <dl>
+            <dd>
+              <MissionGenerator onGenerateOps={handleGenerateOps} />
+              <SpeechSynthesis />
+            </dd>
+          </dl>
+          <dl>
+            <dd>
+              <Armory />
+            </dd>
+          </dl>
+          <dl>
+            <dd>
+              <VehicleSim />
+            </dd>
+          </dl>
+          <section className="map-dash">
+            {mapWasClosed && !showMap && (
+              <button
+                className="bg-gray-100   hover:bg-cyan-200 border border-gray-300 rounded-lg p-3 h-11 focus:ring-gray-100  focus:ring-2 focus:outline-none"
+                onClick={handleShowMap}
+              >
+                Show Map
+              </button>
+            )}
+            {showMap && (
+              <NonGeographicalMap
+                onClose={handleCloseMap}
+                bounds={mapBounds}
+                selectedProvince={selectedProvince}
+                locationsInProvince={randomSelection}
+                imgURL={imgURL}
+              />
+            )}
+          </section>
+        </section>
+      </section>
     </div>
   );
 };

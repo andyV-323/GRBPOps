@@ -8,17 +8,26 @@ function MissionGenerator({ onGenerateOps }) {
   const [randomSelection, setRandomSelection] = useState([]);
   const [codename, setCodename] = useState('');
   const [isGenerated, setIsGenerated] = useState(false);
-  const [errMsg, setErrMsg] = useState('');
+  const [errmsg, setErrMsg] = useState('');
 
   const provinces = Object.keys(PROVINCES);
   const codenameArray = Object.values(CODENAMES);
 
   //Province selection and number of locations
   const generateOps = async () => {
-    setErrMsg(' ');
-
-    if (!selectedProvince || !numberOfLocations <= 0) {
-      setErrMsg('You must choose a province and enter 1 or more locations.');
+    if (!selectedProvince || numberOfLocations <= 0) {
+      let message = '';
+      if (!selectedProvince) {
+        message += 'Please select a province';
+      }
+      if (numberOfLocations <= 0) {
+        message += 'The number of locations must be greater than 0';
+      }
+      setErrMsg(message);
+      return;
+    }
+    setErrMsg('');
+    if (selectedProvince && numberOfLocations > 0) {
       const provinceData = PROVINCES[selectedProvince];
       let locationsInProvince = [...provinceData.locations];
       const ops = [];
@@ -198,7 +207,9 @@ function MissionGenerator({ onGenerateOps }) {
   };
   return (
     <div className="mission-generator">
-      {errMsg && <p style={{ color: 'red' }}>{errMsg}</p>}
+      {errmsg && (
+        <div style={{ color: 'red', marginBottom: '10px' }}>{errmsg}</div>
+      )}
       <h1 style={{ fontSize: '30px' }}>RGJP's Mission Generator</h1>
       <label>
         Select a Province:

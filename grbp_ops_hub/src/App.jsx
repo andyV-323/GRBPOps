@@ -10,6 +10,7 @@ import CommunityOPS from './features/community/CommunityOPS';
 import CreateOPS from './features/community/CreateOPS';
 import ImportOPS from './features/community/ImportOPS';
 import Dashboard from './features/dashboard/Dashboard';
+import HomeLayout from './layout/HomeLayout';
 
 function App() {
   return (
@@ -19,34 +20,34 @@ function App() {
           index
           element={
             <>
-              <Welcome />
               <Home />
+              <Welcome />
             </>
           }
         />
       </Route>
-
-      <Route index element={<Welcome />} />
-      <Route path="missions">
-        <Route index element={<MissionControl />} />
-      </Route>
-      <Route path="garage">
-        <Route index element={<VehicleSim />} />
-      </Route>
-      <Route path="armory">
-        <Route index element={<Armory />} />
-      </Route>
-      <Route path="community">
-        <Route index element={<CommunityOPS />} />
-      </Route>
-      <Route path="community/create">
-        <Route index element={<CreateOPS />} />
-      </Route>
-      <Route path="community/import">
-        <Route index element={<ImportOPS />} />
-      </Route>
-      <Route path="dashboard">
-        <Route index element={<Dashboard />} />
+      <Route path="/" element={<HomeLayout />}>
+        <Route path="missions">
+          <Route index element={<MissionControl />} />
+        </Route>
+        <Route path="garage">
+          <Route index element={<VehicleSim />} />
+        </Route>
+        <Route path="armory">
+          <Route index element={<Armory />} />
+        </Route>
+        <Route path="community">
+          <Route index element={<CommunityOPS />} />
+        </Route>
+        <Route path="community/create">
+          <Route index element={<CreateOPS />} />
+        </Route>
+        <Route path="community/import">
+          <Route index element={<ImportOPS />} />
+        </Route>
+        <Route path="dashboard">
+          <Route index element={<Dashboard />} />
+        </Route>
       </Route>
     </Routes>
   );
