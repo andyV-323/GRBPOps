@@ -452,31 +452,72 @@ a:focus-visible {
 
   /* || ARMORY*/
   .armory-container {
-    height: 40vh;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-small;
+    height: fit-content;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
   }
-  .loadout {
+
+  .loadout-selection {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    height: 90vh;
-    width: 30%;
-    font-size: xx-small;
+    align-items: center;
   }
-  .loadout-selection {
+  /* || COMMUNITY*/
+  .create-operation {
+    font-size: small;
+    height: 140vh;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-createOP {
+    width: 100%;
     height: 80vh;
-    font-size: xx-small;
+    font-size: small;
   }
-  .reset-btn-container {
-    margin: 0 auto;
-    width: 50%;
-    padding-top: 20px;
-    height: 90vh;
-    font-size: xx-small;
+  .import-operation {
+    display: inline-block;
+    font-size: x-small;
+    width: 90%;
+    padding: 0;
+  }
+  .community-menu {
+    padding: 9rem;
+    font-size: medium;
+  }
+  /* || DASHBOARD*/
+  .dashboard {
+    height: 800px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow-y: scroll;
+    font-size: x-small;
+  }
+  .generated-text {
+    width: 100%;
+    height: 50vh;
+  }
+  #leaflet-map {
+    background: black;
+    width: 350px;
+    height: 500px;
+    position: relative;
+    outline-style: none;
   }
 }
 
@@ -507,7 +548,73 @@ a:focus-visible {
     height: 80vh;
     overflow-x: hidden;
     padding: 1rem;
+    font-size: x-small;
+  }
+
+  /* || ARMORY*/
+  .armory-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-small;
+    height: fit-content;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  }
+  /* || COMMUNITY*/
+  .create-operation {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
     font-size: small;
+    height: 80vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .text-createOP {
+    width: 500px;
+    height: 500px;
+    font-size: medium;
+  }
+  .import-operation {
+    display: inline-block;
+    font-size: small;
+    width: 90%;
+    padding: 0;
+    height: 90vh;
+  }
+  .community-menu {
+    padding: 9rem;
+    font-size: large;
+  }
+
+  /* || DASHBOARD*/
+  .dashboard {
+    height: 800px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow-y: scroll;
+    font-size: small;
+  }
+  .generated-text {
+    width: 100%;
+    height: 50vh;
+  }
+  #leaflet-map {
+    background: black;
+    width: 700px;
+    height: 500px;
+    position: relative;
+    outline-style: none;
   }
 }
 
@@ -563,6 +670,72 @@ a:focus-visible {
     padding: 1rem;
     font-size: medium;
   }
+
+  /* || ARMORY*/
+  .armory-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    height: 80vh;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  }
+  /* || COMMUNITY*/
+  .create-operation {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    height: 90vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .text-createOP {
+    width: 500px;
+    height: 500px;
+    font-size: medium;
+  }
+  .import-operation {
+    display: inline-block;
+    font-size: small;
+    width: 90%;
+    padding: 0;
+    height: 85vh;
+  }
+  .community-menu {
+    padding: 9rem;
+    font-size: x-large;
+  }
+
+  /* || DASHBOARD*/
+  .dashboard {
+    height: 1200px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow-y: scroll;
+    font-size: large;
+  }
+  .generated-text {
+    width: 100%;
+    height: 50vh;
+  }
+  #leaflet-map {
+    background: black;
+    width: 1000px;
+    height: 1000px;
+    position: relative;
+    outline-style: none;
+  }
 }
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
   h1 {
@@ -593,8 +766,58 @@ a:focus-visible {
     padding: 1rem;
     font-size: medium;
   }
+  /* || ARMORY*/
+  .armory-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    height: 80vh;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  }
+  /* || COMMUNITY*/
+  .create-operation {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .text-createOP {
+    width: 500px;
+    height: 500px;
+    font-size: medium;
+  }
+  .import-operation {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .community-menu {
+    padding: 9rem;
+    font-size: x-large;
+  }
 }
-@media screen and (min-width: 1201px) and (max-width: 1366px) {
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
   h1 {
     font-size: 1rem;
   }
@@ -621,6 +844,56 @@ a:focus-visible {
     overflow-x: hidden;
     padding: 1rem;
     font-size: medium;
+  }
+  /* || ARMORY*/
+  .armory-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    height: 80vh;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  }
+  /* || COMMUNITY*/
+  .create-operation {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .text-createOP {
+    width: 500px;
+    height: 500px;
+    font-size: medium;
+  }
+  .import-operation {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    font-size: medium;
+    height: 600px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .community-menu {
+    padding: 9rem;
+    font-size: xx-large;
   }
 }
 @media screen and (min-width: 1367px) and (max-width: 2000px) {

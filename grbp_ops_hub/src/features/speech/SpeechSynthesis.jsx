@@ -155,10 +155,10 @@ const SpeechSynthesis = ({ text }) => {
       </div>
       <br />
       <textarea
+        className="generated-text"
         placeholder="Enter a custom mission description or paste Chatgpt response here. When importing a community mission, it will automatically populate text here. Press play to listen to the briefing."
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
-        style={{ resize: 'none', height: '300px', width: '500px' }}
       />
     </div>
   );

@@ -20,7 +20,7 @@ export const GunSelector = ({ item }) => {
       >
         {item}:
       </label>
-      <div className="relative flex items-center max-w-[8rem]">
+      <div className="relative inline-flex items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
         <button
           type="button"
           onClick={handleDecrement}

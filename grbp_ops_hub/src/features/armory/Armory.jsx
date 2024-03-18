@@ -17,13 +17,13 @@ import { SpecialItemsSelector } from './SpecialItemsSelector';
 function Armory() {
   return (
     <div className="armory-container">
-      <h1 style={{ fontSize: '30px' }}>Weight Calculator</h1>
+      <h1>Weight Calculator</h1>
       <section className="loadout">
         <EquipmentProvider>
           <section className="loadout-selection">
             <dl>
               <dd>
-                <h1 style={{ fontSize: '15px' }}>&emsp;Equipment&emsp;</h1>
+                <h1>&emsp;Equipment&emsp;</h1>
                 {Object.keys(EQUIPMENT).map((item) => (
                   <EquipmentSelector
                     key={item}
@@ -36,7 +36,7 @@ function Armory() {
 
             <dl>
               <dd>
-                <h1 style={{ fontSize: '15px' }}>&emsp;Weapons&emsp;</h1>
+                <h1>&emsp;Weapons&emsp;</h1>
                 {Object.keys(GUNS).map((item) => (
                   <GunSelector key={item} item={item} weight={GUNS[item]} />
                 ))}
@@ -45,9 +45,7 @@ function Armory() {
 
             <dl>
               <dd>
-                <h1 style={{ fontSize: '15px' }}>
-                  &emsp;&emsp;&emsp;Gear&emsp;&emsp;&emsp;
-                </h1>
+                <h1>&emsp;&emsp;&emsp;Gear&emsp;&emsp;&emsp;</h1>
                 {Object.keys(GEAR).map((item) => (
                   <GearSelector key={item} item={item} weight={GEAR[item]} />
                 ))}
@@ -56,7 +54,7 @@ function Armory() {
 
             <dl>
               <dd>
-                <h1 style={{ fontSize: '15px' }}>Special Items</h1>
+                <h1>Special Items</h1>
                 {Object.keys(SPECIALITEMS).map((item) => (
                   <SpecialItemsSelector
                     key={item}
@@ -69,7 +67,7 @@ function Armory() {
 
             <dl>
               <dd>
-                <h1 style={{ fontSize: '15px' }}>&emsp;Explosives&emsp;</h1>
+                <h1>&emsp;Explosives&emsp;</h1>
                 {Object.keys(EXPLOSIVES).map((item) => (
                   <ExplosiveSelector
                     key={item}
