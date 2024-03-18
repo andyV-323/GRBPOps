@@ -37,9 +37,8 @@ const FuelSim = () => {
 
   return (
     <div className="vehicle-select">
-      <h4 style={{ fontSize: '15px' }}>Select a Vehicle</h4>
+      <h4>Select a Vehicle</h4>
       <select
-        style={{ fontSize: '15px' }}
         onChange={(e) => setSelectedVehicle(e.target.value)}
         value={selectedVehicle}
       >

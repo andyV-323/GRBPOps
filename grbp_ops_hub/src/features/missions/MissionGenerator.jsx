@@ -232,11 +232,11 @@ function MissionGenerator({ onGenerateOps }) {
       >
         Number of Locations:
       </label>
-      <div className="relative inline-flex; items-center max-w-[8rem]">
+      <div className="relative inline-flex items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
         <button
           type="button"
           onClick={handleDecrement}
-          className="bg-gray-100  hover:bg-cyan-200 border border-gray-300 rounded-l-lg p-3 h-11 focus:ring-gray-100  focus:ring-2 focus:outline-none"
+          className="bg-gray-100  hover:bg-cyan-200 border border-gray-300   rounded-l-lg  p-3 h-11 focus:ring-gray-100  focus:ring-2 focus:outline-none"
         >
           {/* Decrement Icon */}
           <svg

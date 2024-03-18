@@ -42,7 +42,7 @@ const Fuel = ({ vehicle }) => {
     <div className="simulator">
       <h4>Calculator</h4>
       <div className="inc-dec-btn">
-        <label style={{ fontSize: '15px' }}>Enter distance (in-game km):</label>
+        <label>Enter distance (in-game km):</label>
 
         <form className="max-w-xs mx-auto">
           <label

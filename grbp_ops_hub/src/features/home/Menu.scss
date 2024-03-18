@@ -124,26 +124,36 @@ body {
     transition: opacity 0.5s 0.5s;
   }
 }
+@media only screen and (min-width: 280px) and (max-width: 480px) {
+  .navigation-menu {
+    min-width: 240px;
+    width: 80%;
+    font-size: x-small;
+    &::before {
+      width: 110%;
+    }
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .navigation-menu {
+    background-color: $menu-background-color;
+    min-width: 240px;
+    width: 80%;
+    font-size: medium;
 
-@media only screen and (max-width: 700px) {
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   .navigation-menu {
     min-width: 240px;
     width: 80%;
 
     &::before {
       width: 110%;
-    }
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .navigation-menu {
-    background-color: $menu-background-color;
-    min-width: 240px;
-    width: 80%;
-
-    &::before {
-      transform: translate(-50%, -50%) rotate(45deg);
     }
   }
 }
