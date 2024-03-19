@@ -6,10 +6,9 @@ const CreateOPS = () => {
   const [selectedLocations, setSelectedLocations] = useState([]);
   const [text, setText] = useState('');
 
-  // Fixed: Use Object.entries if you need both keys and values
   const handleProvinceChange = (event) => {
     setSelectedProvince(event.target.value);
-    setSelectedLocations([]); // Reset locations on province change
+    setSelectedLocations([]);
   };
 
   const handleLocationChange = (event, locationName) => {

@@ -36,7 +36,6 @@ const Welcome = () => {
         <span className="navigation-menu__bars"></span>
       </div>
       <ul className="menu-list">
-        <h1 style={{ color: '#81ecec' }}>Welcome!</h1>
         <Link to="/dashboard">
           {' '}
           <li className="menu-list__item">Dashboard</li>
