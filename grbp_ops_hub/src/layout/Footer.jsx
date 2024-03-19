@@ -1,9 +1,43 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faDiscord,
+  faRedditAlien,
+  faGithub,
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 const Footer = () => {
   const content = (
     <footer className="dash-footer">
       <div className="copyright-container">
-        <p className="copyright">
-          &copy; {new Date().getFullYear()} Designed by Midnight Solutions
+        <p>
+          Connect with the community:{' '}
+          <a
+            href="https://discordapp.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faDiscord} />{' '}
+          </a>
+          <a
+            href="https://reddit.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faRedditAlien} />{' '}
+          </a>
+          Collaborate:{' '}
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} />{' '}
+          </a>
+          Contact:{' '}
+          <a href="mailto:your-email@example.com">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </a>
         </p>
       </div>
     </footer>
@@ -11,4 +45,5 @@ const Footer = () => {
 
   return content;
 };
+
 export default Footer;

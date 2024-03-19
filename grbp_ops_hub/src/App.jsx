@@ -11,6 +11,7 @@ import CreateOPS from './features/community/CreateOPS';
 import ImportOPS from './features/community/ImportOPS';
 import Dashboard from './features/dashboard/Dashboard';
 import HomeLayout from './layout/HomeLayout';
+import AboutPage from './features/home/AboutPage';
 
 function App() {
   return (
@@ -47,6 +48,9 @@ function App() {
         </Route>
         <Route path="dashboard">
           <Route index element={<Dashboard />} />
+        </Route>
+        <Route path="about">
+          <Route index element={<AboutPage />} />
         </Route>
       </Route>
     </Routes>

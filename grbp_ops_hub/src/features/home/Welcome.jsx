@@ -61,6 +61,11 @@ const Welcome = () => {
           {' '}
           <li className="menu-list__item">Community Operations</li>
         </Link>
+
+        <Link to="/about">
+          {' '}
+          <li className="menu-list__item">About</li>
+        </Link>
       </ul>
     </div>
   );

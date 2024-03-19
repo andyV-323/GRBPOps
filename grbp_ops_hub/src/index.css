@@ -68,6 +68,7 @@ select {
 
 button {
   color: black;
+  font-size: medium;
 }
 
 #root {
@@ -410,6 +411,9 @@ a:focus-visible {
   align-items: center;
   justify-content: center;
 }
+.about-page {
+  background-color: rgba(0, 0, 0, 0.69);
+}
 
 /* || RESPONSIVE*/
 @media screen and (min-width: 280px) and (max-width: 480px) {
@@ -427,7 +431,7 @@ a:focus-visible {
   .copyright-container {
     text-align: center;
     width: 100%;
-    font-size: 0.9rem;
+    font-size: 1rem;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -474,7 +478,7 @@ a:focus-visible {
   /* || COMMUNITY*/
   .create-operation {
     font-size: small;
-    height: 140vh;
+    height: 180vh;
     padding: 1rem 1rem;
     display: flex;
     flex-direction: row;
@@ -482,10 +486,11 @@ a:focus-visible {
     align-content: center;
     justify-content: center;
     align-items: center;
+    overflow-y: scroll;
   }
   .text-createOP {
     width: 100%;
-    height: 80vh;
+    height: 50vh;
     font-size: small;
   }
   .import-operation {
@@ -500,11 +505,7 @@ a:focus-visible {
   }
   /* || DASHBOARD*/
   .dashboard {
-    height: 800px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    height: 80vh;
     overflow-y: scroll;
     font-size: x-small;
   }
@@ -518,6 +519,13 @@ a:focus-visible {
     height: 500px;
     position: relative;
     outline-style: none;
+  }
+  .about-page {
+    font-size: x-small;
+  }
+  .about-page-container {
+    height: 80vh;
+    overflow-y: scroll;
   }
 }
 
@@ -536,7 +544,7 @@ a:focus-visible {
   .copyright-container {
     text-align: center;
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.5rem;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -616,6 +624,13 @@ a:focus-visible {
     position: relative;
     outline-style: none;
   }
+  .about-page {
+    font-size: medium;
+  }
+  .about-page-container {
+    height: 85vh;
+    overflow-y: scroll;
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -644,6 +659,7 @@ a:focus-visible {
     bottom: 0;
     left: 0;
     padding: 10px 0;
+    font-size: 1.5rem;
   }
 
   input[type='number']::-webkit-outer-spin-button,
@@ -736,6 +752,13 @@ a:focus-visible {
     position: relative;
     outline-style: none;
   }
+  .about-page {
+    font-size: large;
+  }
+  .about-page-container {
+    height: 85vh;
+    overflow-y: scroll;
+  }
 }
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
   h1 {
@@ -752,7 +775,7 @@ a:focus-visible {
   .copyright-container {
     text-align: center;
     width: 100%;
-    font-size: 0.9rem;
+    font-size: 1.9rem;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -816,6 +839,34 @@ a:focus-visible {
     padding: 9rem;
     font-size: x-large;
   }
+  /* || DASHBOARD*/
+  .dashboard {
+    height: 1200px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow-y: scroll;
+    font-size: large;
+  }
+  .generated-text {
+    width: 100%;
+    height: 50vh;
+  }
+  #leaflet-map {
+    background: black;
+    width: 1000px;
+    height: 1000px;
+    position: relative;
+    outline-style: none;
+  }
+  .about-page {
+    font-size: large;
+  }
+  .about-page-container {
+    height: 85vh;
+    overflow-y: scroll;
+  }
 }
 @media screen and (min-width: 1201px) and (max-width: 1400px) {
   h1 {
@@ -832,7 +883,7 @@ a:focus-visible {
   .copyright-container {
     text-align: center;
     width: 100%;
-    font-size: 0.9rem;
+    font-size: 1.9rem;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -895,8 +946,36 @@ a:focus-visible {
     padding: 9rem;
     font-size: xx-large;
   }
+  /* || DASHBOARD*/
+  .dashboard {
+    height: 1200px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow-y: scroll;
+    font-size: x-large;
+  }
+  .generated-text {
+    width: 100%;
+    height: 50vh;
+  }
+  #leaflet-map {
+    background: black;
+    width: 1000px;
+    height: 1000px;
+    position: relative;
+    outline-style: none;
+  }
+  .about-page {
+    font-size: large;
+  }
+  .about-page-container {
+    height: 85vh;
+    overflow-y: scroll;
+  }
 }
-@media screen and (min-width: 1367px) and (max-width: 2000px) {
+@media screen and (min-width: 1367px) and (max-width: 3000px) {
   h1 {
     font-size: 1rem;
   }
@@ -906,15 +985,43 @@ a:focus-visible {
   }
 
   .icon-button {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
   .copyright-container {
     text-align: center;
     width: 100%;
-    font-size: 0.9rem;
+    font-size: 2rem;
     position: fixed;
     bottom: 0;
     left: 0;
     padding: 10px 0;
+  }
+  /* || DASHBOARD*/
+  .dashboard {
+    height: 1200px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow-y: scroll;
+    font-size: x-large;
+  }
+  .generated-text {
+    width: 100%;
+    height: 50vh;
+  }
+  #leaflet-map {
+    background: black;
+    width: 1000px;
+    height: 1000px;
+    position: relative;
+    outline-style: none;
+  }
+  .about-page {
+    font-size: large;
+  }
+  .about-page-container {
+    height: 85vh;
+    overflow-y: scroll;
   }
 }
