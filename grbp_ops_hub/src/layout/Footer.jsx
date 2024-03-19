@@ -35,7 +35,7 @@ const Footer = () => {
             <FontAwesomeIcon icon={faGithub} />{' '}
           </a>
           Contact:{' '}
-          <a href="mailto:your-email@example.com">
+          <a href="mailto:andyvalencia.cs@gmail.com">
             <FontAwesomeIcon icon={faEnvelope} />
           </a>
         </p>
