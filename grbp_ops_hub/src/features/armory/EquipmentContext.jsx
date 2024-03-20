@@ -4,6 +4,7 @@ import { GUNS } from '../../config/guns';
 import { GEAR } from '../../config/gear';
 import { SPECIALITEMS } from '../../config/specialItems';
 import { EXPLOSIVES } from '../../config/explosives';
+import { GADGETS } from '../../config/gadgets';
 
 const EquipmentContext = createContext();
 
@@ -11,7 +12,7 @@ export const EquipmentProvider = ({ children }) => {
   const initialQuantities = [
     Object.keys(EQUIPMENT),
     ...Object.keys(GUNS),
-
+    ...Object.keys(GADGETS),
     ...Object.keys(GEAR),
     ...Object.keys(SPECIALITEMS),
     ...Object.keys(EXPLOSIVES),

@@ -12,7 +12,7 @@ export const WeightCalculator = ({ equipmentList }) => {
   };
 
   return (
-    <div style={{ fontSize: '20px' }}>
+    <div className="total-weight">
       Total Weight: {calculateTotalWeight().toFixed(2)} {unit}
     </div>
   );

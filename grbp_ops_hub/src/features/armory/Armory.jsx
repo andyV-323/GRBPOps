@@ -13,17 +13,18 @@ import { EXPLOSIVES } from '../../config/explosives';
 import { ExplosiveSelector } from './ExplosiveSelector';
 import { GearSelector } from './GearSelector';
 import { SpecialItemsSelector } from './SpecialItemsSelector';
+import { GadgetsSelector } from './GadgetsSelector';
+import { GADGETS } from '../../config/gadgets';
 
 function Armory() {
   return (
     <div className="armory-container">
-      <h1>Weight Calculator</h1>
+      <h4>Weight Calculator</h4>
       <section className="loadout">
         <EquipmentProvider>
           <section className="loadout-selection">
             <dl>
               <dd>
-                <h1>&emsp;Equipment&emsp;</h1>
                 {Object.keys(EQUIPMENT).map((item) => (
                   <EquipmentSelector
                     key={item}
@@ -36,7 +37,6 @@ function Armory() {
 
             <dl>
               <dd>
-                <h1>&emsp;Weapons&emsp;</h1>
                 {Object.keys(GUNS).map((item) => (
                   <GunSelector key={item} item={item} weight={GUNS[item]} />
                 ))}
@@ -45,7 +45,7 @@ function Armory() {
 
             <dl>
               <dd>
-                <h1>&emsp;&emsp;&emsp;Gear&emsp;&emsp;&emsp;</h1>
+                <h3>&emsp;&emsp;&emsp;Gear&emsp;&emsp;&emsp;</h3>
                 {Object.keys(GEAR).map((item) => (
                   <GearSelector key={item} item={item} weight={GEAR[item]} />
                 ))}
@@ -54,7 +54,6 @@ function Armory() {
 
             <dl>
               <dd>
-                <h1>Special Items</h1>
                 {Object.keys(SPECIALITEMS).map((item) => (
                   <SpecialItemsSelector
                     key={item}
@@ -67,12 +66,22 @@ function Armory() {
 
             <dl>
               <dd>
-                <h1>&emsp;Explosives&emsp;</h1>
                 {Object.keys(EXPLOSIVES).map((item) => (
                   <ExplosiveSelector
                     key={item}
                     item={item}
                     weight={EXPLOSIVES[item]}
+                  />
+                ))}
+              </dd>
+            </dl>
+            <dl>
+              <dd>
+                {Object.keys(GADGETS).map((item) => (
+                  <GadgetsSelector
+                    key={item}
+                    item={item}
+                    weight={GADGETS[item]}
                   />
                 ))}
               </dd>
@@ -91,6 +100,7 @@ function Armory() {
                       ...GEAR,
                       ...SPECIALITEMS,
                       ...EXPLOSIVES,
+                      ...GADGETS,
                     }}
                   />
                 </dd>

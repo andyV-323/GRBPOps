@@ -21,7 +21,7 @@ export const EquipmentSelector = ({ item }) => {
       >
         {item}:
       </label>
-      <div className="relative inline-flex items-center max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
+      <div className="flex items-center max-w-xxs max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
         <button
           type="button"
           onClick={handleDecrement}

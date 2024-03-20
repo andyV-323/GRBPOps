@@ -7,6 +7,7 @@ export default {
   ],
   theme: {
     screens: {
+      xxs: '280px',
       xs: '480px',
       sm: '640px',
       md: '768px',
@@ -15,7 +16,17 @@ export default {
       xxl: '1536px',
     },
 
-    extend: {},
+    extend: {
+      maxWidth: {
+        xxs: '15rem',
+        xs: '30rem',
+        sm: '15rem',
+        md: '10rem',
+        lg: '10rem',
+        xl: '10rem',
+        xxl: '10rem',
+      },
+    },
   },
   plugins: ['flowbite/plugin'],
 };
