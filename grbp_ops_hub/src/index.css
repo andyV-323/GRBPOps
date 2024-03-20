@@ -354,7 +354,7 @@ a:focus-visible {
 }
 .mission-speech {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
